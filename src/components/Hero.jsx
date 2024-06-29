@@ -3,23 +3,30 @@ import { useGSAP } from "@gsap/react";
 import { heroVideo, smallHeroVideo } from "../utils";
 import { useEffect, useState } from "react";
 const Hero = () => {
-  const [vidSrc, setvidSrc] = useState(
+  const [videoSrc, setVideoSrc] = useState(
     window.innerWidth < 760 ? smallHeroVideo : heroVideo
   );
-  useGSAP(() => {
-    gsap.to("#hero", { delay: 2, opacity: 1, y: 0 });
-    gsap.to("#cta", { delay: 2, opacity: 1, y: -50 });
-  }, []);
-  const handleVideoSrc = () => {
+
+  const handleVideoSrcSet = () => {
     if (window.innerWidth < 760) {
-      setvidSrc(smallHeroVideo);
-    } else setvidSrc(smallHeroVideo);
+      setVideoSrc(smallHeroVideo);
+    } else {
+      setVideoSrc(heroVideo);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener("resize", handleVideoSrc);
-    return () => window.removeEventListener("resize", handleVideoSrc);
-  });
+    window.addEventListener("resize", handleVideoSrcSet);
+
+    return () => {
+      window.removeEventListener("reisze", handleVideoSrcSet);
+    };
+  }, []);
+
+  useGSAP(() => {
+    gsap.to("#hero", { opacity: 1, delay: 2 });
+    gsap.to("#cta", { opacity: 1, y: -50, delay: 2 });
+  }, []);
   return (
     <section className="w-full nav-height bg-black relative">
       <div className="h-5/6 w-full flex-center flex-col">
@@ -32,9 +39,9 @@ const Hero = () => {
             autoPlay
             muted
             playsInline={true}
-            key={vidSrc}
+            key={videoSrc}
           >
-            <source src={vidSrc} type="video/mp4" />
+            <source src={videoSrc} type="video/mp4" />
           </video>
         </div>
       </div>
