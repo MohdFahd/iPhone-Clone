@@ -28,6 +28,24 @@ canvas {
   position: relative;
   max-width: 1120px;
 }
+::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovered */
+}
 
 @layer utilities {
   .flex-center {
