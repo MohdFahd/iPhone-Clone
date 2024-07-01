@@ -18,7 +18,23 @@ const HowItWorks = () => {
       duration: 2,
       ease: "power2.inOut",
     });
-
+    gsap.fromTo(
+      "#videoAnim",
+      {
+        scale: 1, // Initial scale value
+      },
+      {
+        scale: 0.5, // Target scale value
+        scrollTrigger: {
+          trigger: "#videoAnim",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 10, // Synchronize with scroll
+          pin: true, // Pin the video during the scroll
+        },
+        ease: "power2.inOut",
+      }
+    );
     animateWithGsap(".g_fadeIn", {
       opacity: 1,
       y: 0,
@@ -46,7 +62,7 @@ const HowItWorks = () => {
         </div>
 
         <div className="mt-10 md:mt-20 mb-14">
-          <div className="relative h-full flex-center">
+          <div className="relative h-full flex-center" id="videoAnim">
             <div className="overflow-hidden">
               <img
                 src={frameImg}
@@ -61,6 +77,7 @@ const HowItWorks = () => {
                 preload="none"
                 muted
                 autoPlay
+                loop
                 ref={videoRef}
               >
                 <source src={frameVideo} type="video/mp4" />

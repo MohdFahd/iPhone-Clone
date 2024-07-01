@@ -3,7 +3,7 @@ import gsap from "gsap";
 import ModelView from "./ModelView";
 import { useEffect, useRef, useState } from "react";
 import { yellowImg } from "../utils";
-
+import { animateWithGsap } from "../utils/animations";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
@@ -49,7 +49,10 @@ const Model = () => {
   }, [size]);
 
   useGSAP(() => {
-    gsap.to("#heading", { y: 0, opacity: 1 });
+    animateWithGsap("#heading", {
+      y: 0,
+      opacity: 1,
+    });
   }, []);
 
   return (
