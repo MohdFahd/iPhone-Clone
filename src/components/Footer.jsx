@@ -25,7 +25,10 @@ const Footer = () => {
           </p>
           <div className="flex">
             {footerLinks.map((link, i) => (
-              <p key={link} className="font-semibold text-gray text-xs">
+              <p
+                key={link}
+                className="font-semibold text-gray text-xs max-md:hidden"
+              >
                 {link}{" "}
                 {i !== footerLinks.length - 1 && (
                   <span className="mx-2"> | </span>
@@ -34,6 +37,9 @@ const Footer = () => {
             ))}
           </div>
         </div>
+        <p className="font-semibold text-gray text-xs mt-2">
+          Built With 🤍 By Moh'd Al-Sulami
+        </p>
       </div>
     </footer>
   );

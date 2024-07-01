@@ -9,7 +9,7 @@ const Navbar = () => {
           {navLists.map((nav) => (
             <li
               key={nav}
-              className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all"
+              className="px-3 text-sm cursor-pointer text-gray hover:text-white transition-all"
             >
               {nav}
             </li> // Removed the semicolon here

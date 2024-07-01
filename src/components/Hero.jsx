@@ -29,6 +29,13 @@ const Hero = () => {
   }, []);
   return (
     <section className="w-full nav-height bg-black relative">
+      {/* <div class="bg-[#1D1D1F] h-20 flex-center px-10">
+        <p class="text-center text-[17px] max-lg:text-[15px] leading-5 ">
+          {" "}
+          Get $170–$630 in credit toward iPhone 15 Pro when you trade in iPhone
+          11 or higher.
+        </p>
+      </div> */}
       <div className="h-5/6 w-full flex-center flex-col">
         <p id="hero" className="hero-title">
           iPhone 15 Pro
