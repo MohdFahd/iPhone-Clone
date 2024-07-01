@@ -4,6 +4,7 @@ import {
   PerspectiveCamera,
   View,
 } from "@react-three/drei";
+import React from "react";
 
 import * as THREE from "three";
 import Lights from "./Lights";

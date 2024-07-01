@@ -4,6 +4,7 @@ import { rightImg, watchImg } from "../utils";
 import VideoCarousel from "./VideoCarousel";
 import { useAnimations } from "@react-three/drei";
 import { animateWithGsap } from "../utils/animations";
+import React from "react";
 
 const Highlights = () => {
   useGSAP(() => {

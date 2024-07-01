@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Features from "./components/Features";
 import HowItWroks from "./components/HowItWroks";
 import Footer from "./components/Footer";
+import React from "react";
 const App = () => {
   return (
     <>

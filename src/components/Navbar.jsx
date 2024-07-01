@@ -1,5 +1,7 @@
 import { appleImg, bagImg, searchImg } from "../utils";
 import { navLists } from "../constants";
+import React from "react";
+
 const Navbar = () => {
   return (
     <header className="w-full py-5 sm:px-10 max-sm:px-5 flex justify-center items-center ">
