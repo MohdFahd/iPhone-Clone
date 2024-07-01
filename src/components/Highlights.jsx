@@ -14,8 +14,6 @@ const Highlights = () => {
     animateWithGsap(".link", {
       y: 0,
       opacity: 1,
-      opacity: 1,
-      y: 0,
       duration: 1,
       stagger: 0.25,
     });
